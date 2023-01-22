@@ -12,3 +12,7 @@ A modularised version of [this reddit post](https://www.reddit.com/r/neovim/comm
   end,
 }
 ```
+
+## Usage
+
+Within a string press leader-f to toggle if it's an f-string or not.
