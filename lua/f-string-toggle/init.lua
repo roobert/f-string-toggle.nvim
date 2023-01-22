@@ -53,7 +53,7 @@ function M.setup()
 		"n",
 		"<leader>f",
 		":lua require('f-string-toggle').toggle_fstring()<CR>",
-		{ noremap = true }
+		{ noremap = true, silent = true }
 	)
 end
 
