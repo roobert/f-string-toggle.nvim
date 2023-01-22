@@ -1,6 +1,6 @@
 # f-string-toggle
 
-A modularised version of [this reddit post](https://www.reddit.com/r/neovim/comments/tge2ty/comment/i12ja8n/?context=3) by [u/ddmenddes_](https://www.reddit.com/user/ddmenddes_/).
+A modularised version of [this reddit post](https://www.reddit.com/r/neovim/comments/tge2ty/comment/i12ja8n/?context=3) by [u/ddmenddes_](https://www.reddit.com/user/ddmenddes_/) - all credit goes to the original author!
 
 ## Install
 
