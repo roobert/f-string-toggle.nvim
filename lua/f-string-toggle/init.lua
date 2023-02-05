@@ -1,5 +1,7 @@
 local M = {}
 
+local config = require("f-string-toggle.config")
+
 M.toggle_fstring = function()
 	local current_buf = vim.api.nvim_get_current_buf()
 	local filetype = vim.api.nvim_buf_get_option(current_buf, "filetype")
@@ -48,10 +50,19 @@ M.toggle_fstring = function()
 	vim.api.nvim_win_set_cursor(winnr, cursor)
 end
 
-function M.setup()
+function M.setup(options)
+	if options == nil then
+		options = {}
+	end
+
+	-- merge user supplied options with defaults..
+	for k, v in pairs(options) do
+		config.options[k] = v
+	end
+
 	vim.api.nvim_set_keymap(
 		"n",
-		"<leader>f",
+		config.option["key_binding"],
 		":lua require('f-string-toggle').toggle_fstring()<CR>",
 		{ noremap = true, silent = true }
 	)
