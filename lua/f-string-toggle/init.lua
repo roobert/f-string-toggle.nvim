@@ -62,7 +62,7 @@ function M.setup(options)
 
 	vim.api.nvim_set_keymap(
 		"n",
-		config.option["key_binding"],
+		config.options["key_binding"],
 		":lua require('f-string-toggle').toggle_fstring()<CR>",
 		{ noremap = true, silent = true }
 	)
