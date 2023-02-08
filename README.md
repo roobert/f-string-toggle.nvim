@@ -1,4 +1,4 @@
-# :sunflower: f-string-toggle
+# :worm: f-string-toggle
 
 ![f-string-toggle](https://user-images.githubusercontent.com/226654/216850121-8987bc4a-8237-40a9-90f0-0dccbf09de09.gif)
 
