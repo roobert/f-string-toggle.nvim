@@ -8,9 +8,9 @@ A modularised version of [this reddit post](https://www.reddit.com/r/neovim/comm
 
 ```
 {
-  "roobert/fs-string-toggle.nvim",
+  "roobert/f-string-toggle.nvim",
   config = function()
-    require("fs-string-toggle").setup({
+    require("f-string-toggle").setup({
       key_binding = "<leader>f"
     })
   end,
