@@ -64,7 +64,7 @@ function M.setup(options)
 		"n",
 		config.options["key_binding"],
 		":lua require('f-string-toggle').toggle_fstring()<CR>",
-		{ noremap = true, silent = true }
+		{ noremap = true, silent = true, desc = config.options["key_binding_desc"] }
 	)
 end
 
