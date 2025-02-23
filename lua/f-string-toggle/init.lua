@@ -6,7 +6,7 @@ M.toggle_fstring = function()
 	local current_buf = vim.api.nvim_get_current_buf()
 	local filetype = vim.api.nvim_get_option_value("filetype", { buf = current_buf })
 
-	if filetype ~= "python" then
+	if not vim.tbl_contains(config.options.filetypes, filetype) then
 		return
 	end
 
