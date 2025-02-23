@@ -6,13 +6,14 @@ A modularised version of [this reddit post](https://www.reddit.com/r/neovim/comm
 
 ## Install
 
-```
+```lua
 {
   "roobert/f-string-toggle.nvim",
   config = function()
     require("f-string-toggle").setup({
       key_binding = "<leader>f",
       key_binding_desc = "Toggle f-string"
+      filetypes = { "python" },
     })
   end,
 }
