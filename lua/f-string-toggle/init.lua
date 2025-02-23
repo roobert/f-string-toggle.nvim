@@ -2,13 +2,11 @@ local M = {}
 
 local config = require("f-string-toggle.config")
 
-local filetypes = { "python", "snakemake", "markdown", "org" }
-
 M.toggle_fstring = function()
 	local current_buf = vim.api.nvim_get_current_buf()
 	local filetype = vim.api.nvim_get_option_value("filetype", { buf = current_buf })
 
-	if not vim.tbl_contains(filetypes, filetype) then
+	if not vim.tbl_contains(config.options.filetypes, filetype) then
 		return
 	end
 
