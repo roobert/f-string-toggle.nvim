@@ -19,6 +19,33 @@ A modularised version of [this reddit post](https://www.reddit.com/r/neovim/comm
 }
 ```
 
+## Configure
+
+### Disable default mapping
+
+If you would prefer not to use the default key binding, you can set `key_binding = false` and directly call `toggle_fstring()`. Here is an example with `lazy.nvim`:
+
+```lua
+{
+  "roobert/f-string-toggle.nvim",
+  keys = {
+    { "<leader>fs", function() require("f-string-toggle").toggle_fstring() end, desc = "Toggle f-string" }
+  },
+  config = function()
+    require("f-string-toggle").setup({
+      key_binding = false,
+    })
+  end,
+}
+```
+
+If you want to set the mapping outside `lazy.nvim`, you can use:
+
+```lua
+vim.keymap.set('n', '<leader>f', function() require('f-string-toggle').toggle_fstring() end, { desc = "Toggle f-string" })
+```
+
+
 ## Usage
 
 Within a string press leader-f to toggle if it's an f-string or not.
