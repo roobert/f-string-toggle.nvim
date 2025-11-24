@@ -10,10 +10,11 @@ M.toggle_fstring = function()
 		return
 	end
 
-	local ts_utils = require("nvim-treesitter.ts_utils")
 	local winnr = vim.api.nvim_get_current_win()
 	local cursor = vim.api.nvim_win_get_cursor(winnr)
-	local node = ts_utils.get_node_at_cursor()
+	
+	-- Get node at cursor using modern vim.treesitter API
+	local node = vim.treesitter.get_node()
 
 	while (node ~= nil) and (node:type() ~= "string") do
 		node = node:parent()
@@ -24,7 +25,11 @@ M.toggle_fstring = function()
 		return
 	end
 
-	local srow, scol, ecol, erow = ts_utils.get_vim_range({ node:range() })
+	-- Get range using modern API (returns 0-indexed row, col)
+	local start_row, start_col, end_row, end_col = node:range()
+	-- Convert to 1-indexed for vim commands
+	local srow = start_row + 1
+	local scol = start_col + 1
 	vim.fn.setcursorcharpos({ srow, scol })
 	local char = vim.api.nvim_get_current_line():sub(scol, scol)
 	local is_fstring = (char == "f")
